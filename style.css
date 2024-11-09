@@ -6,7 +6,7 @@ body {
     background-color: var(--bg);
     color: var(--fg);
     overflow: hidden;
-    font-family: url(hack-regular.ttf);
+    font-family: url("/hack_regular.ttf");
 }
 
 #loader-wrapper {
