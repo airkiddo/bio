@@ -23,7 +23,6 @@
         <div class="loader"></div>
     </div>
 
-
     <div id="click-wrapper">
         <div class="click">click anywhere on the screen.</div>
     </div>
@@ -33,9 +32,25 @@
             <h1>airkiddo</h1>
             <p>A novice reverse engineer and a seasoned software developer.</p>
             <hr />
-            <p><a href="https://github.com/airkiddo" target="_blank">Github</a> / <a
-                    href="https://discord.com/users/1357549713452306543" target="_blank">
-                    Discord</a> / <a href="https://github.com/airkiddo/bio" target="_blank">Source code</a></p>
+            <p>
+                <a href="https://github.com/airkiddo" target="_blank">Github</a> /
+                <a href="https://discord.com/users/1357549713452306543" target="_blank">Discord</a> /
+                <a href="https://github.com/airkiddo/bio" target="_blank">Source code</a>
+            </p>
+
+            <section id="projects">
+                <h2>Projects</h2>
+                <ul>
+                    <li><strong>Auto Wiki Opener</strong> – Opens relevant game wiki pages automatically. [<a href="https://github.com/airkiddo/auto-wiki-opener" target="_blank">GitHub</a>]</li>
+                    <li><strong>Scrappy Valley</strong> – A roguelike crafting game in development. [<a href="https://airkiddo.itch.io" target="_blank">itch.io</a>]</li>
+                    <!-- Add more projects as needed -->
+                </ul>
+            </section>
+
+            <section id="contact">
+                <h2>Contact</h2>
+                <p>Reach out via <a href="mailto:your@email.com">email</a> or find me on <a href="https://discord.com/users/1357549713452306543" target="_blank">Discord</a>.</p>
+            </section>
         </div>
     </div>
 
@@ -43,6 +58,7 @@
         $(window).on('load', function () {
             $("#loader-wrapper").fadeOut(100);
         });
+
         $("#click-wrapper").on('click', function () {
             $("#click-wrapper").fadeOut(300);
 
