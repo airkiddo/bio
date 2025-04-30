@@ -2,220 +2,229 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <title>airkiddo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="reset.css" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="gruvbox.css" />
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="airkiddo">
-  <meta property="og:description" content="The JVM is safe, secure and memory efficient.">
-  <meta property="og:url" content="https://airkiddo.github.io/bio">
-  <meta name="theme-color" content="#ebdbb2">
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <title>airkiddo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="reset.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="gruvbox.css" />
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="airkiddo">
+    <meta property="og:description" content="The JVM is safe, secure and memory efficient.">
+    <meta property="og:url" content="https://airkiddo.github.io/bio">
+    <meta name="theme-color" content="#ebdbb2">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
 
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Courier New', monospace;
-      background-color: #1d2021;
-      color: #ebdbb2;
-      overflow-x: hidden;
-    }
+    <style>
+        html,
+        body {
+            font-family: 'Courier New', monospace;
+            color: #ebdbb2;
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
 
-    body.no-scroll {
-      overflow: hidden;
-    }
+        #click-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
 
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
+        .click {
+            color: #ffffff;
+            font-size: 1.5rem;
+            text-align: center;
+            padding: 20px;
+        }
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-      color: #fdf4c1;
-    }
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
 
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 30px;
-      color: #fabd2f;
-    }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #fdf4c1;
+        }
 
-    p,
-    a {
-      font-size: 1.1rem;
-      color: #d5c4a1;
-    }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #fabd2f;
+        }
 
-    a {
-      color: #83a598;
-      text-decoration: none;
-    }
+        p,
+        a {
+            font-size: 1.1rem;
+            color: #d5c4a1;
+        }
 
-    a:hover {
-      text-decoration: underline;
-    }
+        a {
+            color: #83a598;
+            text-decoration: none;
+        }
 
-    hr {
-      border: 0;
-      height: 1px;
-      background: #665c54;
-      width: 50%;
-      margin: 2rem auto;
-    }
+        a:hover {
+            text-decoration: underline;
+        }
 
-    .project {
-      margin-bottom: 4rem;
-    }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #665c54;
+            width: 50%;
+            margin: 2rem auto;
+        }
 
-    .project img {
-      width: 300px;
-      max-width: 90%;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      border: 1px solid #665c54;
-    }
+        .project {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 4rem;
+            gap: 20px;
+            text-align: left;
+        }
 
-    footer {
-      padding: 40px 20px;
-      text-align: center;
-      background-color: #282828;
-      border-top: 1px solid #665c54;
-    }
+        .project-image img {
+            width: 300px;
+            max-width: 100%;
+            border-radius: 8px;
+            border: 1px solid #665c54;
+        }
 
-    footer p {
-      color: #bdae93;
-      margin: 5px 0;
-    }
+        .project-content {
+            max-width: 500px;
+        }
 
-    #footer-links {
-      margin-top: 1rem;
-    }
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #282828;
+            border-top: 1px solid #665c54;
+        }
 
-    #footer-links a {
-      margin: 0 10px;
-    }
-
-    #hero {
-      padding: 40px 20px 20px;
-    }
-
-    /* Full black screen overlay */
-    #click-wrapper {
-      position: fixed;
-      inset: 0;
-      background: #000;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-
-    #click-wrapper .click {
-      font-size: 1.8rem;
-      text-align: center;
-    }
-
-    #loader-wrapper {
-      display: none;
-    }
-  </style>
+        footer p {
+            color: #bdae93;
+        }
+    </style>
 </head>
 
-<body class="no-scroll">
-  <!-- Loading screen -->
-  <div id="loader-wrapper">
-    <div class="loader"></div>
-  </div>
-
-  <!-- Full black click-to-play screen -->
-  <div id="click-wrapper">
-    <div class="click">Click anywhere on the screen</div>
-  </div>
-
-  <!-- Hero Section -->
-  <section id="hero">
-    <h1>airkiddo</h1>
-    <p>A novice reverse engineer and a seasoned software developer.</p>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Projects</h2>
-
-    <div class="project">
-      <img src="https://i.postimg.cc/ncVJ3fDK/dark1.png" alt="Auto Wiki Opener">
-      <p><strong>Auto Wiki Opener</strong> – Opens relevant game wiki pages automatically.</p>
-      <a href="https://github.com/airkiddo/auto-wiki-opener" target="_blank">[GitHub]</a>
+<body>
+    <!-- Click-to-play audio -->
+    <div id="click-wrapper">
+        <div class="click">click anywhere on the screen.</div>
     </div>
 
-    <div class="project">
-      <img src="https://via.placeholder.com/300x160?text=Scrappy+Valley" alt="Scrappy Valley">
-      <p><strong>Scrappy Valley</strong> – A roguelike crafting game in development.</p>
-      <a href="https://airkiddo.itch.io" target="_blank">[itch.io]</a>
-    </div>
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1>airkiddo</h1>
+        <p>A novice reverse engineer and a seasoned software developer.</p>
+        <hr />
+    </section>
 
-    <div class="project">
-      <img src="https://via.placeholder.com/300x160?text=Project+3" alt="Project 3">
-      <p><strong>Project Name 3</strong> – Brief description of your third project.</p>
-      <a href="#">[Link]</a>
-    </div>
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
 
-    <div class="project">
-      <img src="https://via.placeholder.com/300x160?text=Project+4" alt="Project 4">
-      <p><strong>Project Name 4</strong> – Brief description of your fourth project.</p>
-      <a href="#">[Link]</a>
-    </div>
+        <div class="project">
+            <div class="project-image">
+                <img src="https://via.placeholder.com/300x160?text=Auto+Wiki+Opener" alt="Auto Wiki Opener">
+            </div>
+            <div class="project-content">
+                <p><strong>Auto Wiki Opener</strong> – Opens relevant game wiki pages automatically.</p>
+                <a href="https://github.com/airkiddo/auto-wiki-opener" target="_blank">[GitHub]</a>
+            </div>
+        </div>
 
-    <div class="project">
-      <img src="https://via.placeholder.com/300x160?text=Project+5" alt="Project 5">
-      <p><strong>Project Name 5</strong> – Brief description of your fifth project.</p>
-      <a href="#">[Link]</a>
-    </div>
+        <div class="project">
+            <div class="project-image">
+                <img src="https://via.placeholder.com/300x160?text=Scrappy+Valley" alt="Scrappy Valley">
+            </div>
+            <div class="project-content">
+                <p><strong>Scrappy Valley</strong> – A roguelike crafting game in development.</p>
+                <a href="https://airkiddo.itch.io" target="_blank">[itch.io]</a>
+            </div>
+        </div>
 
-    <div class="project">
-      <img src="https://via.placeholder.com/300x160?text=Project+6" alt="Project 6">
-      <p><strong>Project Name 6</strong> – Brief description of your sixth project.</p>
-      <a href="#">[Link]</a>
-    </div>
-  </section>
+        <div class="project">
+            <div class="project-image">
+                <img src="https://via.placeholder.com/300x160?text=Project+3" alt="Project 3">
+            </div>
+            <div class="project-content">
+                <p><strong>Project Name 3</strong> – Brief description of your third project.</p>
+                <a href="#">[Link]</a>
+            </div>
+        </div>
 
-  <!-- Contact Footer -->
-  <footer id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
-    <p>Discord: <a href="https://discord.com/users/1357549713452306543" target="_blank">airkiddo#0001</a></p>
-    <div id="footer-links">
-      <a href="https://github.com/airkiddo" target="_blank">Github</a> /
-      <a href="https://discord.com/users/1357549713452306543" target="_blank">Discord</a> /
-      <a href="https://github.com/airkiddo/bio" target="_blank">Source code</a>
-    </div>
-  </footer>
+        <div class="project">
+            <div class="project-image">
+                <img src="https://via.placeholder.com/300x160?text=Project+4" alt="Project 4">
+            </div>
+            <div class="project-content">
+                <p><strong>Project Name 4</strong> – Brief description of your fourth project.</p>
+                <a href="#">[Link]</a>
+            </div>
+        </div>
 
-  <!-- JS -->
-  <script>
-    $(window).on('load', function () {
-      $("body").addClass("no-scroll");
-      $("#loader-wrapper").fadeOut(100);
-    });
+        <div class="project">
+            <div class="project-image">
+                <img src="https://via.placeholder.com/300x160?text=Project+5" alt="Project 5">
+            </div>
+            <div class="project-content">
+                <p><strong>Project Name 5</strong> – Brief description of your fifth project.</p>
+                <a href="#">[Link]</a>
+            </div>
+        </div>
 
-    $("#click-wrapper").on('click', function () {
-      $("#click-wrapper").fadeOut(300, function () {
-        $("body").removeClass("no-scroll");
-      });
-      const obj = document.createElement('audio');
-      obj.src = 'audio.mp3';
-      obj.loop = true;
-      obj.play();
-    });
-  </script>
+        <div class="project">
+            <div class="project-image">
+                <img src="https://via.placeholder.com/300x160?text=Project+6" alt="Project 6">
+            </div>
+            <div class="project-content">
+                <p><strong>Project Name 6</strong> – Brief description of your sixth project.</p>
+                <a href="#">[Link]</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Footer -->
+    <footer id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
+        <p>Discord: <a href="https://discord.com/users/1357549713452306543" target="_blank">airkiddo#0001</a></p>
+        <div id="links">
+            <a href="https://github.com/airkiddo" target="_blank">Github</a> /
+            <a href="https://discord.com/users/1357549713452306543" target="_blank">Discord</a> /
+            <a href="https://github.com/airkiddo/bio" target="_blank">Source code</a>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script type="text/javascript">
+        $("#click-wrapper").on('click', function () {
+            $("#click-wrapper").fadeOut(300);
+            document.body.style.overflow = "auto";
+            var obj = document.createElement('audio');
+            obj.src = 'audio.mp3';
+            obj.loop = true;
+            obj.play();
+        });
+
+        window.onload = () => {
+            document.body.style.overflow = "hidden";
+        };
+    </script>
 </body>
 
 </html>
