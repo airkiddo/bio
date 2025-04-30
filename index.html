@@ -15,16 +15,16 @@
     <meta property="og:url" content="https://airkiddo.github.io/bio">
     <meta name="theme-color" content="#ebdbb2">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
-
+    
     <style>
         html, body {
             margin: 0;
             padding: 0;
             font-family: 'Courier New', monospace;
-            color: #ebdbb2;
-            background-color: #1d2021;
+            background-color: black;
+            color: #00ff00; /* Green text */
             line-height: 1.6;
-            overflow: auto; /* Allow scrolling */
+            overflow: auto;
         }
 
         section {
@@ -39,32 +39,31 @@
         h1 {
             font-size: 3rem;
             margin-bottom: 10px;
-            color: #fdf4c1;
-            visibility: hidden;
+            visibility: hidden; /* Initially hidden */
         }
 
         h2 {
             font-size: 2rem;
             margin-bottom: 30px;
-            color: #fabd2f;
+            color: #00ff00; /* Green text */
         }
 
         p, a {
             font-size: 1.1rem;
-            color: #d5c4a1;
+            color: #00ff00; /* Green text */
         }
 
         .about {
             max-width: 700px;
             margin: 1rem auto 0 auto;
             font-size: 1.1rem;
-            color: #d5c4a1;
+            color: #00ff00; /* Green text */
             line-height: 1.8;
             text-align: center;
         }
 
         a {
-            color: #83a598;
+            color: #00ff00;
             text-decoration: none;
         }
 
@@ -75,7 +74,7 @@
         hr {
             border: 0;
             height: 1px;
-            background: #665c54;
+            background: #00ff00;
             width: 50%;
             margin: 2rem auto;
         }
@@ -94,7 +93,7 @@
             width: 300px;
             max-width: 90%;
             border-radius: 8px;
-            border: 1px solid #665c54;
+            border: 1px solid #00ff00;
         }
 
         .project-description {
@@ -104,12 +103,12 @@
         footer {
             padding: 40px 20px;
             text-align: center;
-            background-color: #282828;
-            border-top: 1px solid #665c54;
+            background-color: black;
+            border-top: 1px solid #00ff00;
         }
 
         footer p {
-            color: #bdae93;
+            color: #00ff00;
         }
 
         #click-wrapper {
@@ -135,7 +134,7 @@
             font-family: 'Courier New', monospace;
             white-space: nowrap;
             overflow: hidden;
-            border-right: 0.15em solid #fff;
+            border-right: 0.15em solid #00ff00;
             width: 0;
             animation: typing 4s steps(30) 1s forwards, blinkCaret 0.75s step-end infinite;
         }
@@ -165,7 +164,7 @@
 
     <!-- Hero Section -->
     <section id="hero">
-        <h1 class="typing-effect" id="typing"></h1>
+        <h1 class="typing-effect" id="typing"></h1> <!-- This is where the typing effect is applied -->
         <p class="about">
             I'm a 14-year-old who’s really into reverse engineering and software development. I love playing games like Rust and Call of Duty, but I also spend a lot of time figuring out how software works. I enjoy breaking things down and putting them back together to understand how they function. I’m self-taught so far, and now I’m excited to learn Python to take my skills to the next level. Whether it’s gaming or coding, I love tackling challenges and figuring things out on my own.
         </p>
@@ -183,7 +182,45 @@
             </div>
         </div>
 
-        <!-- More projects ... -->
+        <div class="project">
+            <img src="https://via.placeholder.com/300x160?text=Scrappy+Valley" alt="Scrappy Valley">
+            <div class="project-description">
+                <p><strong>Scrappy Valley</strong> – A roguelike crafting game in development.</p>
+                <a href="https://airkiddo.itch.io" target="_blank">[GitHub]</a>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="https://via.placeholder.com/300x160?text=Project+3" alt="Project 3">
+            <div class="project-description">
+                <p><strong>Project Name 3</strong> – Brief description of your third project.</p>
+                <a href="#">[Link]</a>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="https://via.placeholder.com/300x160?text=Project+4" alt="Project 4">
+            <div class="project-description">
+                <p><strong>Project Name 4</strong> – Brief description of your fourth project.</p>
+                <a href="#">[Link]</a>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="https://via.placeholder.com/300x160?text=Project+5" alt="Project 5">
+            <div class="project-description">
+                <p><strong>Project Name 5</strong> – Brief description of your fifth project.</p>
+                <a href="#">[Link]</a>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="https://via.placeholder.com/300x160?text=Project+6" alt="Project 6">
+            <div class="project-description">
+                <p><strong>Project Name 6</strong> – Brief description of your sixth project.</p>
+                <a href="#">[Link]</a>
+            </div>
+        </div>
     </section>
 
     <!-- Contact Footer -->
