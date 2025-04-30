@@ -24,7 +24,6 @@
             color: #ebdbb2;
             background-color: #1d2021;
             line-height: 1.6;
-            overflow: hidden;
         }
 
         section {
@@ -38,7 +37,7 @@
 
         h1 {
             font-size: 3rem;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             color: #fdf4c1;
         }
 
@@ -55,7 +54,7 @@
 
         .about {
             max-width: 700px;
-            margin: 0 auto;
+            margin: 1rem auto 0 auto;
             font-size: 1.1rem;
             color: #d5c4a1;
             line-height: 1.8;
@@ -141,7 +140,7 @@
     <section id="hero">
         <h1>airkiddo</h1>
         <p class="about">
-            A 14-year-old reverse engineering enthusiast and self-taught software developer who loves exploring how software works by breaking things down and putting them back together. When I’m not coding or working on personal projects, you’ll probably find me playing Rust or Black Ops 6. I enjoy learning by doing, experimenting with new tools and ideas, and finding creative ways to solve problems. Whether it's building something from scratch or figuring out how something was made, I'm always curious and eager to improve.
+            A 14-year-old reverse engineering enthusiast and self-taught software developer who loves exploring how software works by breaking things down and putting them back together.
         </p>
     </section>
 
@@ -165,7 +164,6 @@
             </div>
         </div>
 
-        <!-- More Projects (placeholder) -->
         <div class="project">
             <img src="https://via.placeholder.com/300x160?text=Project+3" alt="Project 3">
             <div class="project-description">
@@ -210,13 +208,8 @@
 
     <!-- JS -->
     <script type="text/javascript">
-        window.onload = () => {
-            document.body.style.overflow = "hidden";
-        };
-
         document.getElementById("click-wrapper").addEventListener("click", function () {
             this.style.display = "none";
-            document.body.style.overflow = "auto";
 
             var obj = document.createElement('audio');
             obj.src = 'audio.mp3';
