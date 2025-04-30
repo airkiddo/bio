@@ -6,14 +6,7 @@
     <title>airkiddo</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="" />
-    <link rel="stylesheet" type="text/css" href="reset.css" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="stylesheet" type="text/css" href="gruvbox.css" />
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="airkiddo">
-    <meta property="og:description" content="The JVM is safe, secure and memory efficient.">
-    <meta property="og:url" content="https://airkiddo.github.io/bio">
-    <meta name="theme-color" content="#ebdbb2">
+    <meta name="theme-color" content="#00ff00">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
     
     <style>
@@ -40,6 +33,7 @@
             font-size: 3rem;
             margin-bottom: 10px;
             visibility: hidden; /* Initially hidden */
+            display: inline-block;
         }
 
         h2 {
@@ -111,24 +105,6 @@
             color: #00ff00;
         }
 
-        #click-wrapper {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            width: 100vw;
-            background-color: black;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .click {
-            color: #ffffff;
-            font-size: 1.5rem;
-        }
-
         /* Terminal Typing Animation */
         .typing-effect {
             font-family: 'Courier New', monospace;
@@ -136,7 +112,7 @@
             overflow: hidden;
             border-right: 0.15em solid #00ff00;
             width: 0;
-            animation: typing 4s steps(30) 1s forwards, blinkCaret 0.75s step-end infinite;
+            animation: typing 4s steps(10) 1s forwards, blinkCaret 0.75s step-end infinite;
         }
 
         @keyframes typing {
@@ -164,7 +140,7 @@
 
     <!-- Hero Section -->
     <section id="hero">
-        <h1 class="typing-effect" id="typing"></h1> <!-- This is where the typing effect is applied -->
+        <h1 class="typing-effect" id="typing"></h1> <!-- Typing animation on this h1 -->
         <p class="about">
             I'm a 14-year-old who’s really into reverse engineering and software development. I love playing games like Rust and Call of Duty, but I also spend a lot of time figuring out how software works. I enjoy breaking things down and putting them back together to understand how they function. I’m self-taught so far, and now I’m excited to learn Python to take my skills to the next level. Whether it’s gaming or coding, I love tackling challenges and figuring things out on my own.
         </p>
@@ -254,7 +230,9 @@
             }
         }
 
-        window.onload = typeWriter;
+        window.onload = function() {
+            typeWriter(); // Start typing effect when the page loads
+        };
     </script>
 </body>
 
