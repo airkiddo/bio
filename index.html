@@ -68,10 +68,12 @@
 
         .project {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: center;
             margin-bottom: 4rem;
             text-align: left;
+            gap: 20px;
         }
 
         .project img {
@@ -82,7 +84,7 @@
         }
 
         .project-description {
-            margin-left: 20px; /* Adjust the spacing if needed */
+            max-width: 500px;
         }
 
         footer {
@@ -195,11 +197,13 @@
     <script type="text/javascript">
         window.onload = () => {
             document.body.style.overflow = "hidden";
+            document.documentElement.style.overflow = "hidden"; // Ensures scroll is hidden initially
         };
 
         document.getElementById("click-wrapper").addEventListener("click", function () {
             this.style.display = "none";
             document.body.style.overflow = "auto";
+            document.documentElement.style.overflow = "auto"; // Fix: allow scroll again
 
             var obj = document.createElement('audio');
             obj.src = 'audio.mp3';
