@@ -24,6 +24,7 @@
             color: #ebdbb2;
             background-color: #1d2021;
             line-height: 1.6;
+            overflow: auto; /* Allow scrolling */
         }
 
         section {
@@ -210,7 +211,6 @@
     <script type="text/javascript">
         document.getElementById("click-wrapper").addEventListener("click", function () {
             this.style.display = "none";
-
             var obj = document.createElement('audio');
             obj.src = 'audio.mp3';
             obj.loop = true;
