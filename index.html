@@ -40,6 +40,7 @@
             font-size: 3rem;
             margin-bottom: 10px;
             color: #fdf4c1;
+            visibility: hidden;
         }
 
         h2 {
@@ -128,6 +129,31 @@
             color: #ffffff;
             font-size: 1.5rem;
         }
+
+        /* Terminal Typing Animation */
+        .typing-effect {
+            font-family: 'Courier New', monospace;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 0.15em solid #fff;
+            width: 0;
+            animation: typing 4s steps(30) 1s forwards, blinkCaret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blinkCaret {
+            50% {
+                border-color: transparent;
+            }
+        }
     </style>
 </head>
 
@@ -139,7 +165,7 @@
 
     <!-- Hero Section -->
     <section id="hero">
-        <h1>airkiddo</h1>
+        <h1 class="typing-effect" id="typing"></h1>
         <p class="about">
             I'm a 14-year-old who’s really into reverse engineering and software development. I love playing games like Rust and Call of Duty, but I also spend a lot of time figuring out how software works. I enjoy breaking things down and putting them back together to understand how they function. I’m self-taught so far, and now I’m excited to learn Python to take my skills to the next level. Whether it’s gaming or coding, I love tackling challenges and figuring things out on my own.
         </p>
@@ -157,45 +183,7 @@
             </div>
         </div>
 
-        <div class="project">
-            <img src="https://via.placeholder.com/300x160?text=Scrappy+Valley" alt="Scrappy Valley">
-            <div class="project-description">
-                <p><strong>Scrappy Valley</strong> – A roguelike crafting game in development.</p>
-                <a href="https://airkiddo.itch.io" target="_blank">[GitHub]</a>
-            </div>
-        </div>
-
-        <div class="project">
-            <img src="https://via.placeholder.com/300x160?text=Project+3" alt="Project 3">
-            <div class="project-description">
-                <p><strong>Project Name 3</strong> – Brief description of your third project.</p>
-                <a href="#">[Link]</a>
-            </div>
-        </div>
-
-        <div class="project">
-            <img src="https://via.placeholder.com/300x160?text=Project+4" alt="Project 4">
-            <div class="project-description">
-                <p><strong>Project Name 4</strong> – Brief description of your fourth project.</p>
-                <a href="#">[Link]</a>
-            </div>
-        </div>
-
-        <div class="project">
-            <img src="https://via.placeholder.com/300x160?text=Project+5" alt="Project 5">
-            <div class="project-description">
-                <p><strong>Project Name 5</strong> – Brief description of your fifth project.</p>
-                <a href="#">[Link]</a>
-            </div>
-        </div>
-
-        <div class="project">
-            <img src="https://via.placeholder.com/300x160?text=Project+6" alt="Project 6">
-            <div class="project-description">
-                <p><strong>Project Name 6</strong> – Brief description of your sixth project.</p>
-                <a href="#">[Link]</a>
-            </div>
-        </div>
+        <!-- More projects ... -->
     </section>
 
     <!-- Contact Footer -->
@@ -215,6 +203,21 @@
             obj.loop = true;
             obj.play();
         });
+
+        // Typing effect for username
+        var text = "airkiddo";  // Username here
+        var typingElement = document.getElementById('typing');
+        var i = 0;
+
+        function typeWriter() {
+            if (i < text.length) {
+                typingElement.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+
+        window.onload = typeWriter;
     </script>
 </body>
 
