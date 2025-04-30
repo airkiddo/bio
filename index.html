@@ -26,6 +26,10 @@
       overflow-x: hidden;
     }
 
+    body.no-scroll {
+      overflow: hidden;
+    }
+
     section {
       padding: 60px 20px;
       text-align: center;
@@ -125,7 +129,7 @@
   </style>
 </head>
 
-<body>
+<body class="no-scroll">
   <!-- Loading screen -->
   <div id="loader-wrapper">
     <div class="loader"></div>
@@ -198,11 +202,14 @@
   <!-- JS -->
   <script>
     $(window).on('load', function () {
+      $("body").addClass("no-scroll");
       $("#loader-wrapper").fadeOut(100);
     });
 
     $("#click-wrapper").on('click', function () {
-      $("#click-wrapper").fadeOut(300);
+      $("#click-wrapper").fadeOut(300, function () {
+        $("body").removeClass("no-scroll");
+      });
       const obj = document.createElement('audio');
       obj.src = 'audio.mp3';
       obj.loop = true;
