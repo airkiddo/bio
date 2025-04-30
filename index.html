@@ -5,7 +5,6 @@
     <meta charset="UTF-8" />
     <title>airkiddo</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content="" />
     <link rel="stylesheet" type="text/css" href="reset.css" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="stylesheet" type="text/css" href="gruvbox.css" />
@@ -19,17 +18,11 @@
     <style>
         html, body {
             height: 100%;
-            overflow-y: auto; /* Allow scrolling when needed */
-        }
-
-        body {
-            font-family: 'Courier New', monospace;
-            color: #ebdbb2;
-            background-color: #1d2021;
-            line-height: 1.6;
             margin: 0;
             padding: 0;
-            min-height: 100%; /* Ensure body takes full height */
+            background-color: #1d2021;
+            color: #ebdbb2;
+            font-family: 'Courier New', monospace;
         }
 
         section {
@@ -39,7 +32,7 @@
 
         h1 {
             font-size: 3rem;
-            margin-bottom: 10px;
+            margin: 0 0 10px 0;
             color: #fdf4c1;
         }
 
@@ -83,14 +76,6 @@
             border: 1px solid #665c54;
         }
 
-        #links {
-            margin-top: 1rem;
-        }
-
-        #links a {
-            margin: 0 10px;
-        }
-
         footer {
             padding: 40px 20px;
             text-align: center;
@@ -100,36 +85,35 @@
 
         footer p {
             color: #bdae93;
+            margin: 5px 0;
         }
 
-        /* Adjusted Flexbox for Hero Section */
-        #hero {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;  /* Center the content */
-            align-items: center;      /* Align the content */
-            height: auto;  /* Adjust height to fit content */
-            padding-bottom: 20px; /* Add some padding for spacing */
-        }
-
-        #hero h1 {
-            margin-top: 0;
-        }
-
-        #hero p {
-            margin: 10px 0; /* Added margin for spacing */
-        }
-
-        #hero #links {
+        #footer-links {
             margin-top: 1rem;
-            display: flex;
-            justify-content: center;
         }
 
-        #hero #links a {
+        #footer-links a {
             margin: 0 10px;
         }
 
+        /* Removed spacing from #hero */
+        #hero {
+            padding: 40px 20px 20px;
+        }
+
+        #click-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
     </style>
 </head>
 
@@ -144,16 +128,10 @@
         <div class="click">click anywhere on the screen.</div>
     </div>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (name and description only) -->
     <section id="hero">
         <h1>airkiddo</h1>
         <p>A novice reverse engineer and a seasoned software developer.</p>
-        <hr />
-        <div id="links">
-            <a href="https://github.com/airkiddo" target="_blank">Github</a> /
-            <a href="https://discord.com/users/1357549713452306543" target="_blank">Discord</a> /
-            <a href="https://github.com/airkiddo/bio" target="_blank">Source code</a>
-        </div>
     </section>
 
     <!-- Projects Section -->
@@ -202,7 +180,7 @@
         <h2>Contact</h2>
         <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
         <p>Discord: <a href="https://discord.com/users/1357549713452306543" target="_blank">airkiddo#0001</a></p>
-        <div id="links">
+        <div id="footer-links">
             <a href="https://github.com/airkiddo" target="_blank">Github</a> /
             <a href="https://discord.com/users/1357549713452306543" target="_blank">Discord</a> /
             <a href="https://github.com/airkiddo/bio" target="_blank">Source code</a>
@@ -214,6 +192,7 @@
         $(window).on('load', function () {
             $("#loader-wrapper").fadeOut(100);
         });
+
         $("#click-wrapper").on('click', function () {
             $("#click-wrapper").fadeOut(300);
             var obj = document.createElement('audio');
