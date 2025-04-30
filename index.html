@@ -15,18 +15,80 @@
     <meta property="og:url" content="https://airkiddo.github.io/bio">
     <meta name="theme-color" content="#ebdbb2">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+
+    <style>
+        .section {
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ebdbb2;
+            text-align: center;
+        }
+
+        .project {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .project img.project-image {
+            width: 160px;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid #665c54;
+        }
+
+        .project-info h3 {
+            margin: 0;
+            font-size: 1.25rem;
+            color: #fbf1c7;
+        }
+
+        .project-info p {
+            margin: 0.25rem 0 0.5rem;
+            color: #d5c4a1;
+        }
+
+        .project-info a {
+            color: #83a598;
+            text-decoration: none;
+        }
+
+        #contact p {
+            text-align: center;
+        }
+
+        #container {
+            text-align: center;
+        }
+
+        hr {
+            margin: 2rem auto;
+            width: 50%;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Loading div. -->
+    <!-- Loading div -->
     <div id="loader-wrapper">
         <div class="loader"></div>
     </div>
 
+    <!-- Click-to-play wrapper -->
     <div id="click-wrapper">
         <div class="click">click anywhere on the screen.</div>
     </div>
 
+    <!-- Main content -->
     <div id="wrapper">
         <div id="container">
             <h1>airkiddo</h1>
@@ -37,28 +99,46 @@
                 <a href="https://discord.com/users/1357549713452306543" target="_blank">Discord</a> /
                 <a href="https://github.com/airkiddo/bio" target="_blank">Source code</a>
             </p>
-
-            <section id="projects">
-                <h2>Projects</h2>
-                <ul>
-                    <li><strong>Auto Wiki Opener</strong> – Opens relevant game wiki pages automatically. [<a href="https://github.com/airkiddo/auto-wiki-opener" target="_blank">GitHub</a>]</li>
-                    <li><strong>Scrappy Valley</strong> – A roguelike crafting game in development. [<a href="https://airkiddo.itch.io" target="_blank">itch.io</a>]</li>
-                    <!-- Add more projects as needed -->
-                </ul>
-            </section>
-
-            <section id="contact">
-                <h2>Contact</h2>
-                <p>Reach out via <a href="mailto:your@email.com">email</a> or find me on <a href="https://discord.com/users/1357549713452306543" target="_blank">Discord</a>.</p>
-            </section>
         </div>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+
+            <div class="project">
+                <img src="https://via.placeholder.com/160x100?text=Auto+Wiki+Opener" alt="Auto Wiki Opener" class="project-image">
+                <div class="project-info">
+                    <h3>Auto Wiki Opener</h3>
+                    <p>Opens relevant game wiki pages automatically while you play.</p>
+                    <a href="https://github.com/airkiddo/auto-wiki-opener" target="_blank">[GitHub]</a>
+                </div>
+            </div>
+
+            <div class="project">
+                <img src="https://via.placeholder.com/160x100?text=Scrappy+Valley" alt="Scrappy Valley" class="project-image">
+                <div class="project-info">
+                    <h3>Scrappy Valley</h3>
+                    <p>A roguelike crafting game in development, with procedural alleys and NPCs.</p>
+                    <a href="https://airkiddo.itch.io" target="_blank">[itch.io]</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <p>
+                Reach out via <a href="mailto:your@email.com">email</a>
+                or find me on <a href="https://discord.com/users/1357549713452306543" target="_blank">Discord</a>.
+            </p>
+        </section>
     </div>
 
+    <!-- JS for fade and audio -->
     <script type="text/javascript">
         $(window).on('load', function () {
             $("#loader-wrapper").fadeOut(100);
         });
-
         $("#click-wrapper").on('click', function () {
             $("#click-wrapper").fadeOut(300);
 
