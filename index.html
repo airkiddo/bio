@@ -20,44 +20,40 @@
         .section {
             margin-top: 3rem;
             margin-bottom: 3rem;
+            text-align: center;
         }
 
         h2 {
             font-size: 1.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             color: #ebdbb2;
-            text-align: center;
         }
 
         .project {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 3rem;
         }
 
-        .project img.project-image {
-            width: 160px;
+        .project img {
+            width: 300px;
+            max-width: 90%;
             height: auto;
-            border-radius: 6px;
+            border-radius: 8px;
             border: 1px solid #665c54;
+            margin-bottom: 1rem;
         }
 
-        .project-info h3 {
-            margin: 0;
+        .project h3 {
             font-size: 1.25rem;
+            margin-bottom: 0.5rem;
             color: #fbf1c7;
         }
 
-        .project-info p {
-            margin: 0.25rem 0 0.5rem;
+        .project p {
             color: #d5c4a1;
+            margin: 0.5rem 0;
         }
 
-        .project-info a {
+        .project a {
             color: #83a598;
             text-decoration: none;
         }
@@ -106,21 +102,17 @@
             <h2>Projects</h2>
 
             <div class="project">
-                <img src="https://via.placeholder.com/160x100?text=Auto+Wiki+Opener" alt="Auto Wiki Opener" class="project-image">
-                <div class="project-info">
-                    <h3>Auto Wiki Opener</h3>
-                    <p>Opens relevant game wiki pages automatically while you play.</p>
-                    <a href="https://github.com/airkiddo/auto-wiki-opener" target="_blank">[GitHub]</a>
-                </div>
+                <img src="https://via.placeholder.com/300x160?text=Auto+Wiki+Opener" alt="Auto Wiki Opener">
+                <h3>Auto Wiki Opener</h3>
+                <p>Opens relevant game wiki pages automatically while you play.</p>
+                <a href="https://github.com/airkiddo/auto-wiki-opener" target="_blank">[GitHub]</a>
             </div>
 
             <div class="project">
-                <img src="https://via.placeholder.com/160x100?text=Scrappy+Valley" alt="Scrappy Valley" class="project-image">
-                <div class="project-info">
-                    <h3>Scrappy Valley</h3>
-                    <p>A roguelike crafting game in development, with procedural alleys and NPCs.</p>
-                    <a href="https://airkiddo.itch.io" target="_blank">[itch.io]</a>
-                </div>
+                <img src="https://via.placeholder.com/300x160?text=Scrappy+Valley" alt="Scrappy Valley">
+                <h3>Scrappy Valley</h3>
+                <p>A roguelike crafting game in development, with procedural alleys and NPCs.</p>
+                <a href="https://airkiddo.itch.io" target="_blank">[itch.io]</a>
             </div>
         </section>
 
@@ -141,7 +133,6 @@
         });
         $("#click-wrapper").on('click', function () {
             $("#click-wrapper").fadeOut(300);
-
             var obj = document.createElement('audio');
             obj.src = 'audio.mp3';
             obj.loop = true;
