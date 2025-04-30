@@ -17,116 +17,124 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
 
     <style>
-        .section {
-            margin-top: 3rem;
-            margin-bottom: 3rem;
+        body {
+            font-family: 'Courier New', monospace;
+            color: #ebdbb2;
+            background-color: #1d2021;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            padding: 60px 20px;
             text-align: center;
         }
 
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #fdf4c1;
+        }
+
         h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: #ebdbb2;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #fabd2f;
+        }
+
+        p, a {
+            font-size: 1.1rem;
+            color: #d5c4a1;
+        }
+
+        a {
+            color: #83a598;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #665c54;
+            width: 50%;
+            margin: 2rem auto;
         }
 
         .project {
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         .project img {
             width: 300px;
             max-width: 90%;
-            height: auto;
             border-radius: 8px;
-            border: 1px solid #665c54;
             margin-bottom: 1rem;
+            border: 1px solid #665c54;
         }
 
-        .project h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-            color: #fbf1c7;
+        #links {
+            margin-top: 1rem;
         }
 
-        .project p {
-            color: #d5c4a1;
-            margin: 0.5rem 0;
-        }
-
-        .project a {
-            color: #83a598;
-            text-decoration: none;
-        }
-
-        #contact p {
-            text-align: center;
-        }
-
-        #container {
-            text-align: center;
-        }
-
-        hr {
-            margin: 2rem auto;
-            width: 50%;
+        #links a {
+            margin: 0 10px;
         }
     </style>
 </head>
 
 <body>
-    <!-- Loading div -->
+    <!-- Loading screen -->
     <div id="loader-wrapper">
         <div class="loader"></div>
     </div>
 
-    <!-- Click-to-play wrapper -->
+    <!-- Click-to-play audio -->
     <div id="click-wrapper">
         <div class="click">click anywhere on the screen.</div>
     </div>
 
-    <!-- Main content -->
-    <div id="wrapper">
-        <div id="container">
-            <h1>airkiddo</h1>
-            <p>A novice reverse engineer and a seasoned software developer.</p>
-            <hr />
-            <p>
-                <a href="https://github.com/airkiddo" target="_blank">Github</a> /
-                <a href="https://discord.com/users/1357549713452306543" target="_blank">Discord</a> /
-                <a href="https://github.com/airkiddo/bio" target="_blank">Source code</a>
-            </p>
+    <!-- Header / Hero Section -->
+    <section id="hero">
+        <h1>airkiddo</h1>
+        <p>A novice reverse engineer and a seasoned software developer.</p>
+        <hr />
+        <div id="links">
+            <a href="https://github.com/airkiddo" target="_blank">Github</a> /
+            <a href="https://discord.com/users/1357549713452306543" target="_blank">Discord</a> /
+            <a href="https://github.com/airkiddo/bio" target="_blank">Source code</a>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="project">
+            <img src="https://via.placeholder.com/300x160?text=Auto+Wiki+Opener" alt="Auto Wiki Opener">
+            <p><strong>Auto Wiki Opener</strong> – Opens relevant game wiki pages automatically.</p>
+            <a href="https://github.com/airkiddo/auto-wiki-opener" target="_blank">[GitHub]</a>
         </div>
 
-        <!-- Projects Section -->
-        <section id="projects" class="section">
-            <h2>Projects</h2>
+        <div class="project">
+            <img src="https://via.placeholder.com/300x160?text=Scrappy+Valley" alt="Scrappy Valley">
+            <p><strong>Scrappy Valley</strong> – A roguelike crafting game in development.</p>
+            <a href="https://airkiddo.itch.io" target="_blank">[itch.io]</a>
+        </div>
+    </section>
 
-            <div class="project">
-                <img src="https://via.placeholder.com/300x160?text=Auto+Wiki+Opener" alt="Auto Wiki Opener">
-                <h3>Auto Wiki Opener</h3>
-                <p>Opens relevant game wiki pages automatically while you play.</p>
-                <a href="https://github.com/airkiddo/auto-wiki-opener" target="_blank">[GitHub]</a>
-            </div>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Reach out via <a href="mailto:your@email.com">email</a> or find me on <a
+                href="https://discord.com/users/1357549713452306543" target="_blank">Discord</a>.</p>
+    </section>
 
-            <div class="project">
-                <img src="https://via.placeholder.com/300x160?text=Scrappy+Valley" alt="Scrappy Valley">
-                <h3>Scrappy Valley</h3>
-                <p>A roguelike crafting game in development, with procedural alleys and NPCs.</p>
-                <a href="https://airkiddo.itch.io" target="_blank">[itch.io]</a>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <h2>Contact</h2>
-            <p>
-                Reach out via <a href="mailto:your@email.com">email</a>
-                or find me on <a href="https://discord.com/users/1357549713452306543" target="_blank">Discord</a>.
-            </p>
-        </section>
-    </div>
-
-    <!-- JS for fade and audio -->
+    <!-- JS for loader + audio -->
     <script type="text/javascript">
         $(window).on('load', function () {
             $("#loader-wrapper").fadeOut(100);
