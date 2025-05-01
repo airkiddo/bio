@@ -1,221 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Courier New', monospace;
+        color: #ebdbb2;
+        background-color: #1d2021;
+        line-height: 1.6;
+        overflow: auto;
+    }
 
-<head>
-    <meta charset="UTF-8" />
-    <title>airkiddo</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content="" />
-    <link rel="stylesheet" type="text/css" href="reset.css" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="stylesheet" type="text/css" href="gruvbox.css" />
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="airkiddo">
-    <meta property="og:description" content="The JVM is safe, secure and memory efficient.">
-    <meta property="og:url" content="https://airkiddo.github.io/bio">
-    <meta name="theme-color" content="#ebdbb2">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    section {
+        padding: 60px 20px;
+        text-align: center;
+    }
 
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Courier New', monospace;
-            color: #ebdbb2;
-            background-color: #1d2021;
-            line-height: 1.6;
-            overflow: auto; /* Allow scrolling */
-        }
+    #hero {
+        padding-bottom: 20px;
+    }
 
-        section {
-            padding: 60px 20px;
-            text-align: center;
-        }
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+        color: #fdf4c1;
+    }
 
-        #hero {
-            padding-bottom: 20px;
-        }
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        color: #fabd2f;
+    }
 
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            color: #fdf4c1;
-        }
+    p, a {
+        font-size: 1.1rem;
+        color: #d5c4a1;
+    }
 
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 30px;
-            color: #fabd2f;
-        }
+    .about {
+        max-width: 700px;
+        margin: 1rem auto 0 auto;
+        font-size: 1.1rem;
+        color: #d5c4a1;
+        line-height: 1.8;
+        text-align: center;
+    }
 
-        p, a {
-            font-size: 1.1rem;
-            color: #d5c4a1;
-        }
+    a {
+        color: #83a598;
+        text-decoration: none;
+    }
 
-        .about {
-            max-width: 700px;
-            margin: 1rem auto 0 auto;
-            font-size: 1.1rem;
-            color: #d5c4a1;
-            line-height: 1.8;
-            text-align: center;
-        }
+    a:hover {
+        text-decoration: underline;
+    }
 
-        a {
-            color: #83a598;
-            text-decoration: none;
-        }
+    hr {
+        border: 0;
+        height: 1px;
+        background: #665c54;
+        width: 50%;
+        margin: 2rem auto;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
+    .project {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 4rem;
+        text-align: left;
+        gap: 20px;
+    }
 
-        hr {
-            border: 0;
-            height: 1px;
-            background: #665c54;
-            width: 50%;
-            margin: 2rem auto;
-        }
+    .project img {
+        width: 300px;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid #665c54;
+    }
 
-        .project {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 4rem;
-            text-align: left;
-            gap: 20px;
-        }
+    .project-description {
+        max-width: 500px;
+    }
 
-        .project img {
-            width: 300px;
-            max-width: 90%;
-            border-radius: 8px;
-            border: 1px solid #665c54;
-        }
+    footer {
+        padding: 40px 20px;
+        text-align: center;
+        background-color: #282828;
+        border-top: 1px solid #665c54;
+    }
 
-        .project-description {
-            max-width: 500px;
-        }
+    footer p {
+        color: #bdae93;
+    }
 
-        footer {
-            padding: 40px 20px;
-            text-align: center;
-            background-color: #282828;
-            border-top: 1px solid #665c54;
-        }
+    #click-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: black;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-        footer p {
-            color: #bdae93;
-        }
-
-        #click-wrapper {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            width: 100vw;
-            background-color: black;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .click {
-            color: #ffffff;
-            font-size: 1.5rem;
-        }
-    </style>
-</head>
-
-<body>
-    <!-- Click-to-play overlay -->
-    <div id="click-wrapper">
-        <div class="click">click anywhere on the screen.</div>
-    </div>
-
-    <!-- Hero Section -->
-    <section id="hero">
-        <h1>airkiddo</h1>
-        <p class="about">
-            I'm a 14-year-old who’s really into reverse engineering and software development. I love playing games like Rust and Call of Duty, but I also spend a lot of time figuring out how software works. I enjoy breaking things down and putting them back together to understand how they function. I’m self-taught so far, and now I’m excited to learn Python to take my skills to the next level. Whether it’s gaming or coding, I love tackling challenges and figuring things out on my own.
-        </p>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Projects</h2>
-
-        <div class="project">
-            <img src="https://i.postimg.cc/rmqKfM9N/dark1.png" alt="Auto Wiki Opener">
-            <div class="project-description">
-                <p><strong>Auto Wiki Opener</strong> – Opens relevant game wiki pages automatically</p>
-                <a href="https://airkiddo.itch.io/auto-wiki-opener" target="_blank">[itch.io]</a>
-            </div>
-        </div>
-
-        <div class="project">
-            <img src="https://i.postimg.cc/fLq4FQd9/Screenshot-2025-04-30-204729.png" alt="Minecraft Py">
-            <div class="project-description">
-                <p><strong>Minecraft Py</strong> – A Python-coded sandbox game inspired by Minecraft</p>
-                <a href="https://github.com/airkiddo/minecraft" target="_blank">[GitHub]</a>
-            </div>
-        </div>
-
-        <div class="project">
-            <img src="https://i.postimg.cc/L89cHsV1/Screenshot-2025-04-30-210340.png" alt="Wordle Py">
-            <div class="project-description">
-                <p><strong>Wordle Py</strong> – A Python-made word guessing game</p>
-                <a href="https://replit.com/@airkiddo/wordle" target="_blank">[Replit]</a>
-            </div>
-        </div>
-
-        <div class="project">
-            <img src="https://i.postimg.cc/cH0YzVW0/Screenshot-2025-04-30-211006.png" alt="Candy Crush">
-            <div class="project-description">
-                <p><strong>Candy Crush</strong> – A match-3 puzzle game clone</p>
-                <a href="https://replit.com/@airkiddo/Candy-Crush" target="_blank">[Replit]</a>
-            </div>
-        </div>
-
-        <div class="project">
-            <img src="https://via.placeholder.com/300x160?text=Project+5" alt="Project 5">
-            <div class="project-description">
-                <p><strong>Project Name 5</strong> – Brief description of your fifth project.</p>
-                <a href="#">[Link]</a>
-            </div>
-        </div>
-
-        <div class="project">
-            <img src="https://via.placeholder.com/300x160?text=Project+6" alt="Project 6">
-            <div class="project-description">
-                <p><strong>Project Name 6</strong> – Brief description of your sixth project.</p>
-                <a href="#">[Link]</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Footer -->
-    <footer id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:airkiddoz@gmail.com">airkiddoz@gmail.com</a></p>
-        <p>Discord: <a href="https://discord.com/users/1357549713452306543" target="_blank">airkiddo</a></p>
-        <p>Github: <a href="https://github.com/airkiddo" target="_blank">airkiddo</a></p>
-    </footer>
-
-    <!-- JS -->
-    <script type="text/javascript">
-        document.getElementById("click-wrapper").addEventListener("click", function () {
-            this.style.display = "none";
-            var obj = document.createElement('audio');
-            obj.src = 'audio.mp3';
-            obj.loop = true;
-            obj.play();
-        });
-    </script>
-</body>
-
-</html>
+    .click {
+        color: #ffffff;
+        font-size: 1.5rem;
+    }
+</style>
